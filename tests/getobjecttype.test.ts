@@ -132,3 +132,67 @@ describe("Tests for functions", () => {
     expect(actual).toBe(expected);
   });
 });
+
+describe("Tests for objects", () => {
+  it("should get type of an object", () => {
+    let actual = getInternalType({});
+    let expected = "object";
+
+    expect(actual).toBe(expected);
+  });
+  it("should get type of an object created from a class", () => {
+    class ObjectTestClass{}
+
+    let actual = getInternalType(new ObjectTestClass());
+    let expected = "object";
+
+    expect(actual).toBe(expected);
+  });
+  it("should get type of an build-in object", () => {
+    let actual = getInternalType(new Set([1,2,3]));
+    let expected = "object";
+
+    expect(actual).toBe(expected);
+  });
+  it("should get type of arguments", () => {
+    function testArguments() {
+      actual = getInternalType(arguments);
+    }
+
+    let actual: string;
+    let expected = "object";
+
+    testArguments();
+
+    expect(actual).toBe(expected);
+  });
+});
+
+describe("Tests for arrays", () => {
+  it("should get type of an array", () => {
+    let actual = getInternalType([]);
+    let expected = "array";
+
+    expect(actual).toBe(expected);
+  });
+});
+
+describe("Tests for RegExp", () => {
+  it("should get type of an RegExp", () => {
+    let actual1 = getInternalType(new RegExp("s+", "gi"));
+    let actual2 = getInternalType(/s+/gi);
+    let expected = "regexp";
+
+    expect(actual1).toBe(expected);
+    expect(actual2).toBe(expected);
+  });
+});
+
+describe("Tests for errors", () => {
+  it("should get type of an error", () => {
+    let actual = getInternalType(new Error("Test mistake"));
+    let expected = "error";
+
+    expect(actual).toBe(expected);
+  });
+});
