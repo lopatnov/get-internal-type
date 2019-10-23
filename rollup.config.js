@@ -10,7 +10,7 @@ export default {
   output: [
     {
       file: pkg.main,
-      format: 'iife',
+      format: 'umd',
       name: 'getInternalType',
       sourcemap: true
     },

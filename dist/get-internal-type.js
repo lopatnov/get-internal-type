@@ -1,5 +1,8 @@
-var getInternalType = (function () {
-  'use strict';
+(function (global, factory) {
+  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
+  typeof define === 'function' && define.amd ? define(factory) :
+  (global = global || self, global.getInternalType = factory());
+}(this, (function () { 'use strict';
 
   var types = {}, typesToString = types.toString;
   [
@@ -25,5 +28,5 @@ var getInternalType = (function () {
 
   return getInternalType;
 
-}());
+})));
 //# sourceMappingURL=get-internal-type.js.map
