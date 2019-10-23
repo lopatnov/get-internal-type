@@ -95,3 +95,40 @@ describe("Primitive types tests", () => {
     expect(actual3).toBe(expected);
   });
 });
+
+describe("Tests for functions", () => {
+  it("should get type of an anonymous function", () => {
+    let actual = getInternalType(function() {});
+    let expected = "function";
+
+    expect(actual).toBe(expected);
+  });
+  it("should get type of a named function", () => {
+    let actual = getInternalType(theTest);
+    let expected = "function";
+
+    function theTest() {}
+
+    expect(actual).toBe(expected);
+  });
+  it("should get type of a lambda function", () => {
+    let actual = getInternalType(() => {});
+    let expected = "function";
+
+    expect(actual).toBe(expected);
+  });
+  it("should get type of a class", () => {
+    class ClassTest{}
+
+    let actual = getInternalType(ClassTest);
+    let expected = "function";
+
+    expect(actual).toBe(expected);
+  });
+  it("should get type of a generated function", () => {
+    let actual = getInternalType(Function(""));
+    let expected = "function";
+
+    expect(actual).toBe(expected);
+  });
+});
