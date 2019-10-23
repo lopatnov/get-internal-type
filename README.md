@@ -1,31 +1,31 @@
-# getObjectType
+# get-internal-type
 
 Determine the internal JavaScript [[Class]] of an object.
 
 # Install
 
 ```
-npm i getObjectType
+npm i get-internal-type
 ```
 
 ## Import package to the project
 
 ```
-import getObjectType from 'getobjecttype';
+import getInternalType from 'get-internal-type';
 ```
 
-## Convert JavaScript values into string values
+## Gets object type
 
-**function getObjectType(obj: any) => string**
+**function getInternalType(obj: any) => string**
 
 ```
-getObjectType(undefined)// expected "undefined"
-getObjectType(null) // expected "null"
-getObjectType({}) // expected "object"
-getObjectType([1,2,3]) // expected "array"
-getObjectType(Symbol("123")) // expected "symbol"
-getObjectType(() => {}) // expected "function"
-getObjectType(class Simple {}) // expected "function"
+getInternalType(undefined)// expected "undefined"
+getInternalType(null) // expected "null"
+getInternalType({}) // expected "object"
+getInternalType([1,2,3]) // expected "array"
+getInternalType(Symbol("123")) // expected "symbol"
+getInternalType(() => {}) // expected "function"
+getInternalType(class Simple {}) // expected "function"
 ```
 
 # Rights and Agreements
