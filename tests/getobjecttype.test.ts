@@ -149,8 +149,20 @@ describe("Tests for objects", () => {
     expect(actual).toBe(expected);
   });
   it("should get type of an build-in object", () => {
-    let actual = getInternalType(new Set([1,2,3]));
+    let actual = getInternalType(Math);
     let expected = "object";
+
+    expect(actual).toBe(expected);
+  });
+  it("should get type of a set", () => {
+    let actual = getInternalType(new Set([1,2,3]));
+    let expected = "set";
+
+    expect(actual).toBe(expected);
+  });
+  it("should get type of a map", () => {
+    let actual = getInternalType(new Map([[1,2],[3,4]]));
+    let expected = "map";
 
     expect(actual).toBe(expected);
   });
