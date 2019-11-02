@@ -149,14 +149,40 @@ describe("Tests for objects", () => {
     expect(actual).toBe(expected);
   });
   it("should get type of an build-in object", () => {
-    let actual = getInternalType(Math);
+    let actual1 = getInternalType(Math);
+    let actual2 = getInternalType(global);
     let expected = "object";
+
+    expect(actual1).toBe(expected);
+    expect(actual2).toBe(expected);
+  });
+    it("should get type of arguments", () => {
+    function testArguments() {
+      actual = getInternalType(arguments);
+    }
+
+    let actual: string;
+    let expected = "object";
+
+    testArguments();
 
     expect(actual).toBe(expected);
   });
-  it("should get type of a set", () => {
-    let actual = getInternalType(new Set([1,2,3]));
-    let expected = "set";
+});
+
+describe("Tests for date", () => {
+  it("should get type of current date", () => {
+    let actual = getInternalType(new Date());
+    let expected = "date";
+
+    expect(actual).toBe(expected);
+  });
+});
+
+describe("Tests for maps", () => {
+  it("should get type of the empty map", () => {
+    let actual = getInternalType(new Map());
+    let expected = "map";
 
     expect(actual).toBe(expected);
   });
@@ -166,15 +192,18 @@ describe("Tests for objects", () => {
 
     expect(actual).toBe(expected);
   });
-  it("should get type of arguments", () => {
-    function testArguments() {
-      actual = getInternalType(arguments);
-    }
+});
 
-    let actual: string;
-    let expected = "object";
+describe("Tests for sets", () => {
+  it("should get type of the empty set", () => {
+    let actual = getInternalType(new Set());
+    let expected = "set";
 
-    testArguments();
+    expect(actual).toBe(expected);
+  });
+  it("should get type of a set", () => {
+    let actual = getInternalType(new Set([1,2,3]));
+    let expected = "set";
 
     expect(actual).toBe(expected);
   });

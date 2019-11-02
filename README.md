@@ -27,11 +27,14 @@ getInternalType(123) // expected "number"
 getInternalType(BigInt(9007199254740991)) // expected "bigint"
 getInternalType("hello") // expected "string"
 getInternalType(/s+/gi) // expected "regexp"
+getInternalType(new Date()) // expected "date"
 getInternalType(new Error("A mistake")) // expected "error"
 getInternalType({}) // expected "object"
 getInternalType([1,2,3]) // expected "array"
 getInternalType(() => {}) // expected "function"
 getInternalType(class Simple {}) // expected "function"
+getInternalType(new Set()) // expected "set"
+getInternalType(new Map()) // expected "map"
 ```
 
 # Rights and Agreements
