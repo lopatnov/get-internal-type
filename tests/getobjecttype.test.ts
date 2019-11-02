@@ -26,13 +26,13 @@ describe("Primitive types tests", () => {
     expect(actual).toBe(expected);
   });
   it("should get type of the empty string", () => {
-    let actual = getInternalType('');
+    let actual = getInternalType("");
     let expected = "string";
 
     expect(actual).toBe(expected);
   });
   it("should get type of a string", () => {
-    let actual = getInternalType('Some string');
+    let actual = getInternalType("Some string");
     let expected = "string";
 
     expect(actual).toBe(expected);
@@ -86,8 +86,8 @@ describe("Primitive types tests", () => {
   });
   it("should get type of a symbol", () => {
     let actual1 = getInternalType(Symbol());
-    let actual2 = getInternalType(Symbol(''));
-    let actual3 = getInternalType(Symbol('Test'));
+    let actual2 = getInternalType(Symbol(""));
+    let actual3 = getInternalType(Symbol("Test"));
     let expected = "symbol";
 
     expect(actual1).toBe(expected);
@@ -118,7 +118,7 @@ describe("Tests for functions", () => {
     expect(actual).toBe(expected);
   });
   it("should get type of a class", () => {
-    class ClassTest{}
+    class ClassTest {}
 
     let actual = getInternalType(ClassTest);
     let expected = "function";
@@ -141,7 +141,7 @@ describe("Tests for objects", () => {
     expect(actual).toBe(expected);
   });
   it("should get type of an object created from a class", () => {
-    class ObjectTestClass{}
+    class ObjectTestClass {}
 
     let actual = getInternalType(new ObjectTestClass());
     let expected = "object";
@@ -156,7 +156,7 @@ describe("Tests for objects", () => {
     expect(actual1).toBe(expected);
     expect(actual2).toBe(expected);
   });
-    it("should get type of arguments", () => {
+  it("should get type of arguments", () => {
     function testArguments() {
       actual = getInternalType(arguments);
     }
@@ -187,7 +187,7 @@ describe("Tests for maps", () => {
     expect(actual).toBe(expected);
   });
   it("should get type of a map", () => {
-    let actual = getInternalType(new Map([[1,2],[3,4]]));
+    let actual = getInternalType(new Map([[1, 2], [3, 4]]));
     let expected = "map";
 
     expect(actual).toBe(expected);
@@ -202,7 +202,7 @@ describe("Tests for sets", () => {
     expect(actual).toBe(expected);
   });
   it("should get type of a set", () => {
-    let actual = getInternalType(new Set([1,2,3]));
+    let actual = getInternalType(new Set([1, 2, 3]));
     let expected = "set";
 
     expect(actual).toBe(expected);
@@ -215,6 +215,20 @@ describe("Tests for arrays", () => {
     let expected = "array";
 
     expect(actual).toBe(expected);
+  });
+  it("should get type of a typed array Int8Array", () => {
+    // create a TypedArray with a size in bytes
+    const typedArray1 = new Int8Array(8);
+    typedArray1[0] = 32;
+    const typedArray2 = new Int8Array(typedArray1);
+    typedArray2[1] = 42;
+
+    let actual1 = getInternalType(typedArray1);
+    let actual2 = getInternalType(typedArray2);
+    let expected = "typedarray";
+
+    expect(actual1).toBe(expected);
+    expect(actual2).toBe(expected);
   });
 });
 

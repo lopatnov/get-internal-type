@@ -17,6 +17,22 @@ let types: any = {},
   types["[object " + name + "]"] = name.toLowerCase();
 });
 
+[
+  "Int8Array",
+  "Uint8Array",
+  "Uint8ClampedArray",
+  "Int16Array",
+  "Uint16Array",
+  "Int32Array",
+  "Uint32Array",
+  "Float32Array",
+  "Float64Array",
+  "BigInt64Array",
+  "BigUint64Array"
+].forEach(function(name) {
+  types["[object " + name + "]"] = "TypedArray".toLowerCase();
+});
+
 export default function getInternalType(obj: any): string {
   return obj == null
     ? obj + ""
