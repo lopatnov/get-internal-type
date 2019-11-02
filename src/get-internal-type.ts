@@ -10,11 +10,17 @@ let types: any = {},
   "Date",
   "RegExp",
   "Object",
-  "Map",
-  "Set",
   "Error"
 ].forEach(function(name) {
   types["[object " + name + "]"] = name.toLowerCase();
+});
+
+["Map", "WeakMap"].forEach(function(name) {
+  types["[object " + name + "]"] = "map";
+});
+
+["Set", "WeakSet"].forEach(function(name) {
+  types["[object " + name + "]"] = "set";
 });
 
 [
@@ -30,7 +36,7 @@ let types: any = {},
   "BigInt64Array",
   "BigUint64Array"
 ].forEach(function(name) {
-  types["[object " + name + "]"] = "TypedArray".toLowerCase();
+  types["[object " + name + "]"] = "typedarray";
 });
 
 export default function getInternalType(obj: any): string {

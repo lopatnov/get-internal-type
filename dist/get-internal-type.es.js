@@ -8,11 +8,15 @@ var types = {}, typesToString = types.toString;
     "Date",
     "RegExp",
     "Object",
-    "Map",
-    "Set",
     "Error"
 ].forEach(function (name) {
     types["[object " + name + "]"] = name.toLowerCase();
+});
+["Map", "WeakMap"].forEach(function (name) {
+    types["[object " + name + "]"] = "map";
+});
+["Set", "WeakSet"].forEach(function (name) {
+    types["[object " + name + "]"] = "set";
 });
 [
     "Int8Array",
@@ -27,7 +31,7 @@ var types = {}, typesToString = types.toString;
     "BigInt64Array",
     "BigUint64Array"
 ].forEach(function (name) {
-    types["[object " + name + "]"] = "TypedArray".toLowerCase();
+    types["[object " + name + "]"] = "typedarray";
 });
 function getInternalType(obj) {
     return obj == null

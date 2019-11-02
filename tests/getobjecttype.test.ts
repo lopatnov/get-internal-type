@@ -192,6 +192,12 @@ describe("Tests for maps", () => {
 
     expect(actual).toBe(expected);
   });
+  it("should get type of a weak map", () => {
+    let actual = getInternalType(new WeakMap());
+    let expected = "map";
+
+    expect(actual).toBe(expected);
+  });
 });
 
 describe("Tests for sets", () => {
@@ -203,6 +209,12 @@ describe("Tests for sets", () => {
   });
   it("should get type of a set", () => {
     let actual = getInternalType(new Set([1, 2, 3]));
+    let expected = "set";
+
+    expect(actual).toBe(expected);
+  });
+  it("should get type of a weak set", () => {
+    let actual = getInternalType(new WeakSet());
     let expected = "set";
 
     expect(actual).toBe(expected);
