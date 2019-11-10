@@ -38,6 +38,8 @@ Determine the JavaScript [[Class]] of an object, where:
 | Promise.resolve('any') | promise | 1.4.0 |
 | function* () {} | generatorfunction | 1.4.1 |
 | (function* () {})() | generator | 1.4.1 |
+| new ArrayBuffer(8) | arraybuffer | 1.5.0 |
+| new DataView(buffer) | dataview | 1.5.0 |
 
 # Install
 
@@ -93,6 +95,9 @@ console.log(getInternalType(new BigUint64Array())) // expected "typedarray"
 console.log(getInternalType(Promise.resolve('any'))) // expected "promise"
 console.log(getInternalType(function* () {})) // expected "generatorfunction" (ES6)
 console.log(getInternalType((function* () {})())) // expected "generator"
+
+console.log(getInternalType(new ArrayBuffer(16))) // expected "arraybuffer"
+console.log(getInternalType(new DataView(new ArrayBuffer(16)))) // expected "dataview"
 
 ```
 

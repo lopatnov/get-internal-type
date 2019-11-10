@@ -272,3 +272,25 @@ describe("Tests for Promise", () => {
     expect(actual).toBe(expected);
   });
 });
+
+describe("Tests for structured data", () => {
+  it("should get type of an ArrayBuffer", () => {
+    var buffer = new ArrayBuffer(8);
+    var view = new Int32Array(buffer);
+    let actual1 = getInternalType(buffer);
+    let actual2 = getInternalType(view);
+    let expected1 = "arraybuffer";
+    let expected2 = "typedarray";
+
+    expect(actual1).toBe(expected1);
+    expect(actual2).toBe(expected2);
+  });
+  it("should get type of a DataView", () => {
+    var buffer = new ArrayBuffer(16);
+    var view = new DataView(buffer);
+    let actual = getInternalType(view);
+    let expected = "dataview";
+
+    expect(actual).toBe(expected);
+  });
+});

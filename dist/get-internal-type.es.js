@@ -11,7 +11,9 @@ var types = {}, typesToString = types.toString;
     "Error",
     "Promise",
     "Generator",
-    "GeneratorFunction"
+    "GeneratorFunction",
+    "ArrayBuffer",
+    "DataView"
 ].forEach(function (name) {
     types["[object " + name + "]"] = name.toLowerCase();
 });
