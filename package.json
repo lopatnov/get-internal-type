@@ -1,11 +1,18 @@
 {
   "name": "get-internal-type",
-  "version": "1.5.1",
+  "version": "1.5.2",
   "description": "Determine the internal JavaScript [[Class]] of an object.",
   "author": "lopatnov",
   "license": "Apache-2.0",
   "homepage": "https://github.com/lopatnov/get-internal-type#readme",
-  "keywords": ["TypeScript", "JavaScript", "Node.js", "cross-browser", "class", "object"],
+  "keywords": [
+    "TypeScript",
+    "JavaScript",
+    "Node.js",
+    "cross-browser",
+    "class",
+    "object"
+  ],
   "main": "dist/get-internal-type.js",
   "module": "dist/get-internal-type.es.js",
   "types": "dist/get-internal-type.d.ts",
@@ -13,7 +20,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "rollup -c && cp -r polyfills dist/polyfills",
+    "build": "rollup -c",
     "watch": "rollup -cw",
     "test": "jest"
   },
@@ -35,6 +42,7 @@
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-sourcemaps": "^0.4.2",
     "rollup-plugin-typescript2": "^0.24.3",
+    "rollup-plugin-uglify": "^6.0.3",
     "ts-jest": "^24.1.0",
     "typescript": "^3.6.4"
   }
