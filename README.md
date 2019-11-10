@@ -43,8 +43,17 @@ Determine the JavaScript [[Class]] of an object, where:
 
 # Install
 
+Node:
+
 ```
 npm i get-internal-type
+```
+
+Browser:
+
+```
+<script src="<path to library>/polyfills/array.forEach.min.js"></script>
+<script src="<path to library>/get-internal-type.min.js"></script>
 ```
 
 ## Import package to the project
