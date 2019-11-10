@@ -85,6 +85,7 @@ console.log(getInternalType(new Float32Array())) // expected "typedarray"
 console.log(getInternalType(new Float64Array())) // expected "typedarray"
 console.log(getInternalType(new BigInt64Array())) // expected "typedarray"
 console.log(getInternalType(new BigUint64Array())) // expected "typedarray"
+console.log(getInternalType(Promise.resolve('any'))) // expected "promise"
 ```
 
 # Rights and Agreements
