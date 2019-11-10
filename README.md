@@ -2,39 +2,40 @@
 
 Determine the JavaScript [[Class]] of an object, where:
 
-| Object Value        | [[Class]]  |
-| ------------- |:----- |
-| undefined      | undefined |
-| null     |   null |
-| false |    boolean |
-| Symbol("123") |    symbol |
-| 123 |    number |
-| BigInt(9007199254740991) |    bigint |
-| "hello" |    string |
-| /s+/gi |    regexp |
-| new Date() |    date |
-| new Error("A mistake") |    error |
-| {} |    object |
-| new (class SomeCustomClass {}) |    object |
-| () => {} |    function |
-| function(){} |    function |
-| class Simple {} |    function |
-| [1,2,3] | array |
-| new Set() | set |
-| new WeakSet() | set |
-| new Map() | map |
-| new WeakMap() | map |
-| new Int8Array(8) |  typedarray |
-| new Uint8Array() | typedarray |
-| new Uint8ClampedArray() | typedarray |
-| new Int16Array() | typedarray |
-| new Uint16Array() | typedarray |
-| new Int32Array() | typedarray |
-| new Uint32Array() | typedarray |
-| new Float32Array() | typedarray |
-| new Float64Array() | typedarray |
-| new BigInt64Array() | typedarray |
-| new BigUint64Array() | typedarray |
+| Object Value | [[Class]] | Version |
+| ------------- |:----- |:------ |
+| undefined | undefined | 1.0.0 |
+| null | null | 1.0.0 |
+| false | boolean | 1.0.0 |
+| Symbol("123") | symbol | 1.0.0 |
+| 123 | number | 1.0.0 |
+| BigInt(9007199254740991) | bigint | 1.0.0 |
+| "hello" | string | 1.0.0 |
+| /s+/gi | regexp | 1.0.0 |
+| new Date() | date | 1.0.0 |
+| new Error("A mistake") | error | 1.0.0 |
+| {} | object | 1.0.0 |
+| new (class SomeCustomClass {}) | object | 1.0.0 |
+| () => {} | function | 1.0.0 |
+| function(){} | function | 1.0.0 |
+| class Simple {} | function | 1.0.0 |
+| [1,2,3] | array | 1.0.0 |
+| new Set() | set | 1.2.0 |
+| new WeakSet() | set | 1.3.1 |
+| new Map() | map | 1.2.0 |
+| new WeakMap() | map | 1.3.1 |
+| new Int8Array(8) |  typedarray | 1.3.0 |
+| new Uint8Array() | typedarray | 1.3.0 |
+| new Uint8ClampedArray() | typedarray | 1.3.0 |
+| new Int16Array() | typedarray | 1.3.0 |
+| new Uint16Array() | typedarray | 1.3.0 |
+| new Int32Array() | typedarray | 1.3.0 |
+| new Uint32Array() | typedarray | 1.3.0 |
+| new Float32Array() | typedarray | 1.3.0 |
+| new Float64Array() | typedarray | 1.3.0 |
+| new BigInt64Array() | typedarray | 1.3.0 |
+| new BigUint64Array() | typedarray | 1.3.0 |
+| Promise.resolve('any') | promise | 1.4.0 |
 
 # Install
 

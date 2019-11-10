@@ -263,3 +263,12 @@ describe("Tests for errors", () => {
     expect(actual).toBe(expected);
   });
 });
+
+describe("Tests for Promise", () => {
+  it("should get type of a Promise", () => {
+    let actual = getInternalType(Promise.resolve('any'));
+    let expected = "promise";
+
+    expect(actual).toBe(expected);
+  });
+});

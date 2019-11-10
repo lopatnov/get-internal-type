@@ -8,7 +8,8 @@ var types = {}, typesToString = types.toString;
     "Date",
     "RegExp",
     "Object",
-    "Error"
+    "Error",
+    "Promise"
 ].forEach(function (name) {
     types["[object " + name + "]"] = name.toLowerCase();
 });

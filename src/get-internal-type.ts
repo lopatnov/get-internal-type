@@ -10,7 +10,8 @@ let types: any = {},
   "Date",
   "RegExp",
   "Object",
-  "Error"
+  "Error",
+  "Promise"
 ].forEach(function(name) {
   types["[object " + name + "]"] = name.toLowerCase();
 });

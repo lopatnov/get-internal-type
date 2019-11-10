@@ -1,6 +1,6 @@
 {
   "name": "get-internal-type",
-  "version": "1.3.1",
+  "version": "1.4.0",
   "description": "Determine the internal JavaScript [[Class]] of an object.",
   "author": "lopatnov",
   "license": "Apache-2.0",
