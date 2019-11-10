@@ -1,5 +1,4 @@
-var types = {}, typesToString = types.toString;
-[
+var types = {}, typesToString = types.toString, buildInList = [
     "Boolean",
     "Number",
     "String",
@@ -14,16 +13,7 @@ var types = {}, typesToString = types.toString;
     "GeneratorFunction",
     "ArrayBuffer",
     "DataView"
-].forEach(function (name) {
-    types["[object " + name + "]"] = name.toLowerCase();
-});
-["Map", "WeakMap"].forEach(function (name) {
-    types["[object " + name + "]"] = "map";
-});
-["Set", "WeakSet"].forEach(function (name) {
-    types["[object " + name + "]"] = "set";
-});
-[
+], typedArrays = [
     "Int8Array",
     "Uint8Array",
     "Uint8ClampedArray",
@@ -35,7 +25,17 @@ var types = {}, typesToString = types.toString;
     "Float64Array",
     "BigInt64Array",
     "BigUint64Array"
-].forEach(function (name) {
+], maps = ["Map", "WeakMap"], sets = ["Set", "WeakSet"];
+buildInList.forEach(function (name) {
+    types["[object " + name + "]"] = name.toLowerCase();
+});
+maps.forEach(function (name) {
+    types["[object " + name + "]"] = "map";
+});
+sets.forEach(function (name) {
+    types["[object " + name + "]"] = "set";
+});
+typedArrays.forEach(function (name) {
     types["[object " + name + "]"] = "typedarray";
 });
 function getInternalType(obj) {
