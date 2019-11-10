@@ -36,6 +36,8 @@ Determine the JavaScript [[Class]] of an object, where:
 | new BigInt64Array() | typedarray | 1.3.0 |
 | new BigUint64Array() | typedarray | 1.3.0 |
 | Promise.resolve('any') | promise | 1.4.0 |
+| function* () {} | generatorfunction | 1.4.1 |
+| (function* () {})() | generator | 1.4.1 |
 
 # Install
 
@@ -70,10 +72,12 @@ console.log(getInternalType(() => {})) // expected "function"
 console.log(getInternalType(function(){})) // expected "function"
 console.log(getInternalType(class Simple {})) // expected "function"
 console.log(getInternalType([1,2,3])) // expected "array"
+
 console.log(getInternalType(new Set())) // expected "set"
 console.log(getInternalType(new WeakSet())) // expected "set"
 console.log(getInternalType(new Map())) // expected "map"
 console.log(getInternalType(new WeakMap())) // expected "map"
+
 console.log(getInternalType(new Int8Array(8))) // expected "typedarray"
 console.log(getInternalType(new Uint8Array())) // expected "typedarray"
 console.log(getInternalType(new Uint8ClampedArray())) // expected "typedarray"
@@ -85,7 +89,11 @@ console.log(getInternalType(new Float32Array())) // expected "typedarray"
 console.log(getInternalType(new Float64Array())) // expected "typedarray"
 console.log(getInternalType(new BigInt64Array())) // expected "typedarray"
 console.log(getInternalType(new BigUint64Array())) // expected "typedarray"
+
 console.log(getInternalType(Promise.resolve('any'))) // expected "promise"
+console.log(getInternalType(function* () {})) // expected "generatorfunction" (ES6)
+console.log(getInternalType((function* () {})())) // expected "generator"
+
 ```
 
 # Rights and Agreements

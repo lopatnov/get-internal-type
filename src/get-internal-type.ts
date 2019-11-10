@@ -11,7 +11,9 @@ let types: any = {},
   "RegExp",
   "Object",
   "Error",
-  "Promise"
+  "Promise",
+  "Generator",
+  "GeneratorFunction"
 ].forEach(function(name) {
   types["[object " + name + "]"] = name.toLowerCase();
 });

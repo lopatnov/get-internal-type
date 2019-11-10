@@ -266,7 +266,7 @@ describe("Tests for errors", () => {
 
 describe("Tests for Promise", () => {
   it("should get type of a Promise", () => {
-    let actual = getInternalType(Promise.resolve('any'));
+    let actual = getInternalType(Promise.resolve("any"));
     let expected = "promise";
 
     expect(actual).toBe(expected);
