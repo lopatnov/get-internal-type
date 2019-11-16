@@ -3,7 +3,7 @@
 Determine the JavaScript [[Class]] of an object, where:
 
 | Object Value | [[Class]] | Version |
-| ------------- |:----- |:------ |
+|:------------- |:----- |:------ |
 | undefined | undefined | 1.0.0 |
 | null | null | 1.0.0 |
 | false | boolean | 1.0.0 |
@@ -109,6 +109,12 @@ console.log(getInternalType(new ArrayBuffer(16))) // expected "arraybuffer"
 console.log(getInternalType(new DataView(new ArrayBuffer(16)))) // expected "dataview"
 
 ```
+
+# Demo
+
+See, how it's working: [https://runkit.com/lopatnov/get-internal-type-demo](https://runkit.com/lopatnov/get-internal-type-demo)
+
+Test it with a runkit: [https://npm.runkit.com/get-internal-type](https://npm.runkit.com/get-internal-type)
 
 # Rights and Agreements
 
