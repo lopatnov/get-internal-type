@@ -1,11 +1,10 @@
 {
   "name": "get-internal-type",
-  "version": "1.5.2",
+  "version": "1.5.3",
   "description": "Determine the internal JavaScript [[Class]] of an object.",
   "author": "lopatnov",
   "license": "Apache-2.0",
   "homepage": "https://lopatnov.github.io/get-internal-type/",
-  "publishConfig": { "registry": "https://npm.pkg.github.com/" },
   "keywords": [
     "TypeScript",
     "JavaScript",
