@@ -3,7 +3,7 @@
 Determine the JavaScript [[Class]] of an object, where:
 
 | Object Value | [[Class]] | Version |
-| ------------- |:----- |:------ |
+|:------------- |:----- |:------ |
 | undefined | undefined | 1.0.0 |
 | null | null | 1.0.0 |
 | false | boolean | 1.0.0 |
