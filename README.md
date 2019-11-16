@@ -70,6 +70,12 @@ Browser:
 import getInternalType from 'get-internal-type';
 ```
 
+or
+
+```javascript
+var getInternalType = require("get-internal-type");
+```
+
 ## Gets object type
 
 **getInternalType(obj: any) => string**
