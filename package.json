@@ -4,7 +4,8 @@
   "description": "Determine the internal JavaScript [[Class]] of an object.",
   "author": "lopatnov",
   "license": "Apache-2.0",
-  "homepage": "https://github.com/lopatnov/get-internal-type#readme",
+  "homepage": "https://lopatnov.github.io/get-internal-type/",
+  "publishConfig": { "registry": "https://npm.pkg.github.com/" },
   "keywords": [
     "TypeScript",
     "JavaScript",
