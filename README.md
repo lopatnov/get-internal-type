@@ -112,9 +112,9 @@ console.log(getInternalType(new DataView(new ArrayBuffer(16)))) // expected "dat
 
 # Demo
 
-See, how it's working: https://runkit.com/lopatnov/get-internal-type-demo
+See, how it's working: [https://runkit.com/lopatnov/get-internal-type-demo](https://runkit.com/lopatnov/get-internal-type-demo)
 
-Test it with a runkit: https://npm.runkit.com/get-internal-type
+Test it with a runkit: [https://npm.runkit.com/get-internal-type](https://npm.runkit.com/get-internal-type)
 
 # Rights and Agreements
 
