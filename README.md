@@ -45,9 +45,13 @@ Determine the JavaScript [[Class]] of an object, where:
 
 Node:
 
-```
-npm i get-internal-type
-```
+[npmjs repository](//www.npmjs.com/package/get-internal-type)
+
+` npm i get-internal-type `
+
+[github repository](//github.com/lopatnov/get-internal-type/packages/57088)
+
+` npm install @lopatnov/get-internal-type@1.5.2 `
 
 Browser:
 
