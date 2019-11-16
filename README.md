@@ -47,22 +47,26 @@ Node:
 
 [npmjs repository](//www.npmjs.com/package/get-internal-type)
 
-` npm i get-internal-type `
+```shell
+npm i get-internal-type 
+```
 
 [github repository](//github.com/lopatnov/get-internal-type/packages/57088)
 
-` npm install @lopatnov/get-internal-type@1.5.2 `
+```shell
+npm install @lopatnov/get-internal-type@1.5.2
+```
 
 Browser:
 
-```
+```html
 <script src="<path to library>/polyfills/array.forEach.min.js"></script>
 <script src="<path to library>/get-internal-type.min.js"></script>
 ```
 
 ## Import package to the project
 
-```
+```typescript
 import getInternalType from 'get-internal-type';
 ```
 
@@ -70,7 +74,7 @@ import getInternalType from 'get-internal-type';
 
 **getInternalType(obj: any) => string**
 
-```
+```typescript
 console.log(getInternalType(undefined)) // expected "undefined"
 console.log(getInternalType(null)) // expected "null"
 console.log(getInternalType(false)) // expected "boolean"
