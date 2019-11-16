@@ -51,10 +51,10 @@ Node:
 npm i get-internal-type 
 ```
 
-[github repository](//github.com/lopatnov/get-internal-type/packages/57088)
+[github repository](//github.com/lopatnov/get-internal-type/packages)
 
 ```shell
-npm install @lopatnov/get-internal-type@1.5.2
+npm install @lopatnov/get-internal-type
 ```
 
 Browser:
