@@ -135,3 +135,5 @@ Test it with a runkit: [https://npm.runkit.com/get-internal-type](https://npm.ru
 License [Apache-2.0](https://github.com/lopatnov/get-internal-type/blob/master/LICENSE)
 
 Copyright 2019 Oleksandr Lopatnov
+
+Test
