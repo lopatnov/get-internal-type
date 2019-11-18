@@ -1,6 +1,7 @@
 ---
 name: Bug report
 title: Incorrect ...
+about: Please fix ...
 
 ---
 
