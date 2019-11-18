@@ -52,7 +52,7 @@ Node:
 [![https://nodei.co/npm/get-internal-type.png?downloads=true&downloadRank=true&stars=true](https://nodei.co/npm/get-internal-type.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/get-internal-type)
 
 ```shell
-npm i get-internal-type 
+npm install get-internal-type 
 ```
 
 [GitHub repository](//github.com/lopatnov/get-internal-type/packages)
