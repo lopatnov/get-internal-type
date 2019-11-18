@@ -64,8 +64,8 @@ npm install @lopatnov/get-internal-type
 Browser:
 
 ```html
-<script src="<path to library>/polyfills/array.forEach.min.js"></script>
-<script src="<path to library>/get-internal-type.min.js"></script>
+<script src="https://lopatnov.github.io/get-internal-type/dist/polyfills/array.forEach.min.js"></script>
+<script src="https://lopatnov.github.io/get-internal-type/dist/get-internal-type.min.js"></script>
 ```
 
 ## Import package to the project
