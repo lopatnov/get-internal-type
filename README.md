@@ -1,4 +1,6 @@
-# get-internal-type
+# get-internal-type [![Build Status](https://travis-ci.org/lopatnov/get-internal-type.png?branch=master)](https://travis-ci.org/lopatnov/get-internal-type)
+
+[![https://nodei.co/npm/get-internal-type.png?downloads=true&downloadRank=true&stars=true](https://nodei.co/npm/get-internal-type.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/get-internal-type)
 
 Determine the JavaScript [[Class]] of an object, where:
 
