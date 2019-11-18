@@ -1,6 +1,6 @@
 # get-internal-type 
 
-[![Build Status](https://travis-ci.org/lopatnov/get-internal-type.png?branch=master)](https://travis-ci.org/lopatnov/get-internal-type) [![npm version](https://badge.fury.io/js/get-internal-type.svg)](https://badge.fury.io/js/get-internal-type) [![Twitter](https://img.shields.io/twitter/url?url=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Fget-internal-type)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Fget-internal-type)
+[![npm version](https://badge.fury.io/js/get-internal-type.svg)](https://badge.fury.io/js/get-internal-type) [![Build Status](https://travis-ci.org/lopatnov/get-internal-type.png?branch=master)](https://travis-ci.org/lopatnov/get-internal-type) [![Twitter](https://img.shields.io/twitter/url?url=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Fget-internal-type)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Fget-internal-type)
 
 Determine the JavaScript [[Class]] of an object, where:
 
