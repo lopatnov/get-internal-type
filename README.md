@@ -1,4 +1,6 @@
-# get-internal-type
+# get-internal-type 
+
+[![npm version](https://badge.fury.io/js/get-internal-type.svg)](https://badge.fury.io/js/get-internal-type) [![Build Status](https://travis-ci.org/lopatnov/get-internal-type.png?branch=master)](https://travis-ci.org/lopatnov/get-internal-type) [![Twitter](https://img.shields.io/twitter/url?url=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Fget-internal-type)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Fget-internal-type)
 
 Determine the JavaScript [[Class]] of an object, where:
 
@@ -45,23 +47,25 @@ Determine the JavaScript [[Class]] of an object, where:
 
 Node:
 
-[npmjs repository](//www.npmjs.com/package/get-internal-type)
+[NPM repository](//www.npmjs.com/package/get-internal-type)
+
+[![https://nodei.co/npm/get-internal-type.png?downloads=true&downloadRank=true&stars=true](https://nodei.co/npm/get-internal-type.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/get-internal-type)
 
 ```shell
-npm i get-internal-type 
+npm install get-internal-type 
 ```
 
-[github repository](//github.com/lopatnov/get-internal-type/packages/57088)
+[GitHub repository](//github.com/lopatnov/get-internal-type/packages)
 
 ```shell
-npm install @lopatnov/get-internal-type@1.5.2
+npm install @lopatnov/get-internal-type
 ```
 
 Browser:
 
 ```html
-<script src="<path to library>/polyfills/array.forEach.min.js"></script>
-<script src="<path to library>/get-internal-type.min.js"></script>
+<script src="https://lopatnov.github.io/get-internal-type/dist/polyfills/array.forEach.min.js"></script>
+<script src="https://lopatnov.github.io/get-internal-type/dist/get-internal-type.min.js"></script>
 ```
 
 ## Import package to the project
