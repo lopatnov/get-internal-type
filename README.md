@@ -68,6 +68,8 @@ Browser:
 <script src="https://lopatnov.github.io/get-internal-type/dist/get-internal-type.min.js"></script>
 ```
 
+Browser support: Cross-browser
+
 ## Import package to the project
 
 ```typescript
