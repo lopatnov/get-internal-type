@@ -1,6 +1,9 @@
 # get-internal-type
 
-[![npm version](https://badge.fury.io/js/get-internal-type.svg)](https://badge.fury.io/js/get-internal-type) [![Build Status](https://travis-ci.org/lopatnov/get-internal-type.png?branch=master)](https://travis-ci.org/lopatnov/get-internal-type) [![Twitter](https://img.shields.io/twitter/url?url=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Fget-internal-type)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Fget-internal-type)
+[![NPM version](https://badge.fury.io/js/get-internal-type.svg)](https://badge.fury.io/js/get-internal-type)
+![License](https://img.shields.io/github/license/lopatnov/get-internal-type)
+[![Build Status](https://travis-ci.org/lopatnov/get-internal-type.png?branch=master)](https://travis-ci.org/lopatnov/get-internal-type)
+[![Twitter](https://img.shields.io/twitter/url?url=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Fget-internal-type)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Fget-internal-type)
 
 Determine the JavaScript [[Class]] of an object, where:
 
@@ -67,6 +70,8 @@ npm install @lopatnov/get-internal-type
 <script src="//lopatnov.github.io/get-internal-type/dist/polyfills/array.forEach.min.js"></script>
 <script src="//lopatnov.github.io/get-internal-type/dist/get-internal-type.min.js"></script>
 ```
+
+Browser support: Cross-browser
 
 ## Import package to the project
 
