@@ -48,8 +48,6 @@ Determine the JavaScript [[Class]] of an object, where:
 
 ## Install
 
-Node:
-
 [![https://nodei.co/npm/@lopatnov/get-internal-type.png?downloads=true&downloadRank=true&stars=true](https://nodei.co/npm/@lopatnov/get-internal-type.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/@lopatnov/get-internal-type)
 
 ```shell
