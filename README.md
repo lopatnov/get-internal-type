@@ -1,9 +1,9 @@
 # get-internal-type
 
-[![NPM version](https://badge.fury.io/js/get-internal-type.svg)](https://badge.fury.io/js/get-internal-type)
+[![NPM version](https://badge.fury.io/js/get-internal-type.svg)](https://www.npmjs.com/package/@lopatnov/get-internal-type)
 ![License](https://img.shields.io/github/license/lopatnov/get-internal-type)
 [![Build Status](https://travis-ci.org/lopatnov/get-internal-type.png?branch=master)](https://travis-ci.org/lopatnov/get-internal-type)
-[![Twitter](https://img.shields.io/twitter/url?url=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Fget-internal-type)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Fget-internal-type)
+[![Twitter](https://img.shields.io/twitter/url?url=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2F%40lopatnov%2Fget-internal-type)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2F%40lopatnov%2Fget-internal-type)
 
 Determine the JavaScript [[Class]] of an object, where:
 
@@ -46,19 +46,11 @@ Determine the JavaScript [[Class]] of an object, where:
 | new ArrayBuffer(8) | arraybuffer | 1.5.0 |
 | new DataView(buffer) | dataview | 1.5.0 |
 
-# Install
+## Install
 
 Node:
 
-[NPM repository](//www.npmjs.com/package/get-internal-type)
-
-[![https://nodei.co/npm/get-internal-type.png?downloads=true&downloadRank=true&stars=true](https://nodei.co/npm/get-internal-type.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/get-internal-type)
-
-```shell
-npm install get-internal-type
-```
-
-[GitHub repository](//github.com/lopatnov/get-internal-type/packages)
+[![https://nodei.co/npm/@lopatnov/get-internal-type.png?downloads=true&downloadRank=true&stars=true](https://nodei.co/npm/@lopatnov/get-internal-type.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/@lopatnov/get-internal-type)
 
 ```shell
 npm install @lopatnov/get-internal-type
@@ -87,7 +79,7 @@ var getInternalType = require("get-internal-type");
 
 ## Gets object type
 
-**getInternalType(obj: any) => string**
+### getInternalType(obj: any) => string
 
 ```typescript
 console.log(getInternalType(undefined)) // expected "undefined"
@@ -133,13 +125,13 @@ console.log(getInternalType(new DataView(new ArrayBuffer(16)))) // expected "dat
 
 ```
 
-# Demo
+## Demo
 
 See, how it's working: [https://runkit.com/lopatnov/get-internal-type-demo](https://runkit.com/lopatnov/get-internal-type-demo)
 
 Test it with a runkit: [https://npm.runkit.com/get-internal-type](https://npm.runkit.com/get-internal-type)
 
-# Rights and Agreements
+## Rights and Agreements
 
 License [Apache-2.0](https://github.com/lopatnov/get-internal-type/blob/master/LICENSE)
 
