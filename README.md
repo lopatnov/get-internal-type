@@ -65,11 +65,13 @@ Browser support: Cross-browser
 
 ## Import package to the project
 
+### TypeScript
+
 ```typescript
 import getInternalType from 'get-internal-type';
 ```
 
-or
+### JavaScript
 
 ```javascript
 var getInternalType = require("get-internal-type");
@@ -77,7 +79,7 @@ var getInternalType = require("get-internal-type");
 
 ## Gets object type
 
-### getInternalType(obj: any) => string
+### `getInternalType(obj: any) => string`
 
 ```typescript
 console.log(getInternalType(undefined)) // expected "undefined"
@@ -133,4 +135,4 @@ Test it with a runkit: [https://npm.runkit.com/get-internal-type](https://npm.ru
 
 License [Apache-2.0](https://github.com/lopatnov/get-internal-type/blob/master/LICENSE)
 
-Copyright 2019 Oleksandr Lopatnov
+Copyright 2019-2020 Oleksandr Lopatnov
