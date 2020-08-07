@@ -79,7 +79,7 @@ var getInternalType = require("get-internal-type");
 
 ## Gets object type
 
-### `getInternalType(obj: any) => string`
+### getInternalType(obj: any) => string
 
 ```typescript
 console.log(getInternalType(undefined)) // expected "undefined"
@@ -129,7 +129,7 @@ console.log(getInternalType(new DataView(new ArrayBuffer(16)))) // expected "dat
 
 See, how it's working: [https://runkit.com/lopatnov/get-internal-type-demo](https://runkit.com/lopatnov/get-internal-type-demo)
 
-Test it with a runkit: [https://npm.runkit.com/get-internal-type](https://npm.runkit.com/get-internal-type)
+Test it with a runkit: [https://npm.runkit.com/%40lopatnov%2Fget-internal-type](https://npm.runkit.com/%40lopatnov%2Fget-internal-type)
 
 ## Rights and Agreements
 
