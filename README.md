@@ -1,5 +1,6 @@
 # get-internal-type [![Twitter](https://img.shields.io/twitter/url?url=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2F%40lopatnov%2Fget-internal-type)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2F%40lopatnov%2Fget-internal-type)
 
+![npm](https://img.shields.io/npm/dt/@lopatnov/get-internal-type)
 [![NPM version](https://badge.fury.io/js/%40lopatnov%2Fget-internal-type.svg)](https://www.npmjs.com/package/@lopatnov/get-internal-type)
 [![License](https://img.shields.io/github/license/lopatnov/get-internal-type)](https://github.com/lopatnov/get-internal-type/blob/master/LICENSE)
 [![GitHub issues](https://img.shields.io/github/issues/lopatnov/get-internal-type)](https://github.com/lopatnov/get-internal-type/issues)
