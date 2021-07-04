@@ -1,6 +1,6 @@
 {
   "name": "@lopatnov/get-internal-type",
-  "version": "1.5.6",
+  "version": "1.5.7",
   "description": "Determine the internal JavaScript [[Class]] of an object.",
   "author": "lopatnov",
   "license": "Apache-2.0",
@@ -34,19 +34,19 @@
     "url": "https://github.com/lopatnov/get-internal-type/issues"
   },
   "devDependencies": {
-    "@lopatnov/rollup-plugin-uglify": "^2.1.0",
-    "@types/jest": "^26.0.9",
+    "@lopatnov/rollup-plugin-uglify": "^2.1.1",
+    "@types/jest": "^26.0.23",
     "@types/typescript": "^2.0.0",
-    "jest": "^26.2.2",
-    "jest-config": "^26.2.2",
-    "rollup": "^2.23.0",
+    "jest": "^27.0.6",
+    "jest-config": "^27.0.6",
+    "rollup": "^2.52.7",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-json": "^4.0.0",
     "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-sourcemaps": "^0.6.2",
-    "rollup-plugin-typescript2": "^0.27.1",
-    "terser": "^5.0.0",
-    "ts-jest": "^26.1.4",
-    "typescript": "^3.9.7"
+    "rollup-plugin-sourcemaps": "^0.6.3",
+    "rollup-plugin-typescript2": "^0.30.0",
+    "terser": "^5.7.1",
+    "ts-jest": "^27.0.3",
+    "typescript": "^4.3.5"
   }
 }

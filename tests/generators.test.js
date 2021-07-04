@@ -1,4 +1,4 @@
-var getInternalType = require("../dist/get-internal-type.js");
+var getInternalType = require("../dist/get-internal-type.min.js");
 
 describe("Tests for Generators", () => {
     it("should get type of a Generator", () => {
