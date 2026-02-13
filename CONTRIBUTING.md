@@ -1,131 +1,124 @@
-# Contributions Welcome
+# Contributing to get-internal-type
 
-Thanks for your interest in contributing to **get-internal-type**! Contributing to open source projects like this one can be a rewarding way to learn, teach, and build experience. Not only that, contributing is a great way to get involved with _social coding_. We are excited to see what amazing contributions you will make, as well as how your contributions will benefit others.
+Thank you for your interest in contributing to this project!
 
-If you are new to contributing to open source projects, the process can be intimidating. Not to worry! To help ensure both you and the community get the most out of your contributions, we've put together the following guidelines.
+## Getting Started
 
-## Table of Contents
+### Prerequisites
 
-1. [Types of Contributions](#types-of-contributions)
-1. [Ground Rules & Expectations](#ground-rules--expectations)
-1. [How to Contribute](#how-to-contribute)
+- Node.js 18.x or higher
+- npm
 
----
+### Installation
 
-## Types of Contributions
+1. Clone the repository:
+```bash
+git clone https://github.com/<YOUR-USERNAME>/get-internal-type.git
+cd get-internal-type
+```
 
-The common misconception about contributing to an open source project is that you need to contribute code. In fact, there are numerous ways you can directly contribute. To give you some ideas of how you can contribute, here are some examples of the types of contributions we are looking for:
+2. Install dependencies:
+```bash
+npm install
+```
 
-### Developers can:
+## Development
 
-* Take a look at the [open issues][issues] and find one you can tackle.
+### Building
 
-* Locate and fix bugs.
+Build the project:
+```bash
+npm run build
+```
 
-* Implement innovative and awesome new features.
+Watch mode for development:
+```bash
+npm run watch
+```
 
-* Help to improve tooling and testing.
+### Testing
 
-### Organizers and Planners can:
+Run tests:
+```bash
+npm test
+```
 
-* Link to duplicate issues, and suggest new issue labels, to help keep things organized.
+### Linting & Formatting
 
-* Go through the [open issues][issues] and suggest closing old ones.
+Run the linter:
+```bash
+npm run lint
+```
 
-* Ask clarifying questions on recently opened issues to move the discussion forward.
+Auto-fix lint issues:
+```bash
+npm run lint:fix
+```
 
-* Help to organize meetups about the project.
+Format source code:
+```bash
+npm run format
+```
 
-### Writers can:
+### Project Structure
 
-* Help to fix or improve the project's documentation.
+```
+get-internal-type/
+├── src/
+│   └── get-internal-type.ts  # Main library source code
+├── tests/
+│   └── getobjecttype.test.ts # Test suite
+├── dist/                      # Built output (CJS, ESM, UMD)
+├── package.json
+├── tsconfig.json
+└── rollup.config.mjs
+```
 
-* Contribute to the project's [Wiki][wiki].
+## Making Changes
 
-### Designers can:
+1. Create a new branch for your feature or fix:
+```bash
+git checkout -b feature/your-feature-name
+```
 
-* Design wire frames, mock-ups, graphical assets, and logos.
+2. Make your changes
 
-* Put together a style guide to help the project have a consistent visual design.
+3. Ensure lint passes:
+```bash
+npm run lint
+```
 
-### Supporters can:
+4. Ensure tests pass:
+```bash
+npm test
+```
 
-* Answer questions for people on open issues, or about the project in general.
+5. Ensure the build succeeds:
+```bash
+npm run build
+```
 
-* Help to moderate discussion boards or conversation channels.
+6. Commit your changes with a descriptive message in present tense
 
-## Ground Rules & Expectations
+7. Push to your fork and submit a Pull Request
 
-Since the project is constantly being updated with contributions of all sorts, it is important to establish ground rules and as well as expectations. This helps to ensure the best possible experience for users, as well as encourage a positive, helpful, and lively community of active contributors just like you!
+## Code Style
 
-Please make sure you read our [code of conduct][code-of-conduct] prior to contributing.
+- Use TypeScript for all source code
+- Follow existing code patterns
+- Keep code minimal and focused
+- Add tests for new functionality
+- ESLint and Prettier are configured — run `npm run lint:fix` before committing
 
-## How to Contribute
+## Reporting Issues
 
-If you'd like to contribute, a good place to start is by searching through the [issues][issues] and [pull requests][pull-requests] to see if someone else had a similar idea or question.
+When reporting issues, please include:
 
-If you don't see your idea listed, and you think it fits into the goals of the project, you should:
+- Node.js version
+- npm version
+- Steps to reproduce
+- Expected vs actual behavior
 
-* **Minor Contribution _(e.g., typo fix)_:** Open a pull request
-* **Major Contribution _(e.g., new feature)_:** Start by opening an issue first. That way, other people can weigh in on the discussion and planning before you do any work.
+## License
 
-To start making a contribution:
-
-1. `fork` the project repository by clicking the **fork** button on GitHub.![fork](https://help.github.com/assets/images/help/repository/fork_button.jpg) 
-
-1. `clone` your forked repository (_noob tip: the actual command you type in is everything after the $_):
-
-   ```shell
-   $ git clone https://github.com/<YOUR-USERNAME>/get-internal-type
-   ```
-
-1. Add a new remote that points to the original project so you can sync project changes with your local copy:
-
-   ```shell
-   $ git remote add upstream https://github.com/lopatnov/get-internal-type
-   ```
-
-1. Pull upstream changes into your local repositories `development` branch:
-
-   ```shell
-   $ git checkout development
-   $ git pull upstream development && git push origin development
-   ```
-
-1. Create a new branch from the `development` branch:
-![branch](https://help.github.com/assets/images/help/branch/branch-selection-dropdown.png)
-
-   **IMPORTANT:** Make sure you are on the `development` branch first.
-
-   ```shell
-   $ git checkout -b <YOUR-NEW-BRANCH>
-   ```
-
-1. Make your contribution to the project code.
-
-1. Write or adapt tests as needed.
-
-1. Add or change documentation as needed.
-
-1. After commiting changes, push your branch to your fork on Github, the remote `origin`:
-
-   **IMPORTANT:** Your commit message should be in present tense and should describe what the commit, when applied, does to the code - not what you did to the code.
-
-   ```shell
-   $ git push -u origin <YOUR-NEW-BRANCH>
-   ```
-
-1. From your forked GitHub repository, open a pull request in the branch containing your contributions. Target the project's `development` branch for the pull request.
-
-1. At this point, your contribution has been submitted for review. Please be patient while your contribution is being reviewed as this can take some time. Meanwhile, if there are questions or comments on your contribution, please respond and/or update with future commits.
-
-1. Once the pull request is approved and merged, you can pull the changes from `upstream` to your local repository and delete your extra branch(es).
-
-1. Don't forget to check out more [about] this project  
-
-Happy contributing!
-
-[issues]: https://github.com/lopatnov/get-internal-type/issues
-[pull-requests]: https://github.com/lopatnov/get-internal-type/pulls
-[code-of-conduct]: ./CODE_OF_CONDUCT.md
-[about]: https://lopatnov.github.io/get-internal-type/
+By contributing, you agree that your contributions will be licensed under the Apache-2.0 License.

@@ -1,145 +1,179 @@
-# get-internal-type [![Twitter](https://img.shields.io/twitter/url?url=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2F%40lopatnov%2Fget-internal-type)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2F%40lopatnov%2Fget-internal-type)
+# @lopatnov/get-internal-type
 
-![npm](https://img.shields.io/npm/dt/@lopatnov/get-internal-type)
+[![npm](https://img.shields.io/npm/dt/@lopatnov/get-internal-type)](https://www.npmjs.com/package/@lopatnov/get-internal-type)
 [![NPM version](https://badge.fury.io/js/%40lopatnov%2Fget-internal-type.svg)](https://www.npmjs.com/package/@lopatnov/get-internal-type)
 [![License](https://img.shields.io/github/license/lopatnov/get-internal-type)](https://github.com/lopatnov/get-internal-type/blob/master/LICENSE)
-[![GitHub issues](https://img.shields.io/github/issues/lopatnov/get-internal-type)](https://github.com/lopatnov/get-internal-type/issues)
-[![GitHub forks](https://img.shields.io/github/forks/lopatnov/get-internal-type)](https://github.com/lopatnov/get-internal-type/network)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/lopatnov/get-internal-type/nodejs.yml)](https://github.com/lopatnov/get-internal-type/actions)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.9-blue)](https://www.typescriptlang.org/)
 [![GitHub stars](https://img.shields.io/github/stars/lopatnov/get-internal-type)](https://github.com/lopatnov/get-internal-type/stargazers)
-[![Build Status](https://travis-ci.org/lopatnov/get-internal-type.png?branch=master)](https://travis-ci.org/lopatnov/get-internal-type)
 
-[![Patreon](https://img.shields.io/badge/Donate-Patreon-informational)](https://www.patreon.com/lopatnov)
-[![sobe.ru](https://img.shields.io/static/v1?label=sobe.ru&message=%D0%91%D0%BB%D0%B0%D0%B3%D0%BE%D0%B4%D0%B0%D1%80%D0%BD%D0%BE%D1%81%D1%82%D1%8C&color=yellow&logo=data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAMAAADXqc3KAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAArlBMVEUAAAD//////////////////////////////////////////////////////////////////PP/3l7/9c//0yb/zAD/6ZP/zQf/++7/3FD/88X/0h7//v7/5oX/zATUqQDktgD/5HjQpgAFBACQcwD/zw/fsgCOcQD6yADZrQD2xAD8yQDnuADxwADcsADbrwDpugD3xQD5xwDjtQDywQD+ywD9ygDvvwD7yAD/1jRaObVGAAAAEHRSTlMAA3zg707pEJP8MMUBYN5fiwXJMQAAAAFiS0dEAf8CLd4AAAAHdElNRQflBgMAAxO4O2jCAAAAuElEQVQoz42S1w7CMAxFS8ueYZgNLZuyRynw/z9GdtxIkbgPceQT6Tq2vZwfEKx8wRPyiaViSYDABqQsAMq0OzxUqhbo9kBcavUM6A9AAtJAYDgC0ID7i+t4AghwfxanszlAGBnA/Flc0MfL1doA5s/ChoLtbg8QI392gpIBzf/AwYAWAsdTrIE05/nz5Xq7S6DKpenHM0pe+o/qg5Am74/0ybTkm+q6wG4iltV2LTko52idy+Banx9RYiS6Vrsc3AAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAyMS0wNi0wM1QwMDowMzoxOCswMDowMLvSSCkAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMjEtMDYtMDNUMDA6MDM6MTgrMDA6MDDKj/CVAAAAAElFTkSuQmCC)](https://sobe.ru/na/tech_knigi)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-lopatnov-informational?style=social&logo=linkedin)](https://www.linkedin.com/in/lopatnov/)
+Determine the internal JavaScript [[Class]] of an object. A lightweight, cross-platform TypeScript library for reliable runtime type detection.
 
-Determine the JavaScript [[Class]] of an object, where:
+## Features
 
-| Object Value | [[Class]] | Version |
-|:------------- |:----- |:------ |
-| undefined | undefined | 1.0.0 |
-| null | null | 1.0.0 |
-| false | boolean | 1.0.0 |
-| Symbol("123") | symbol | 1.0.0 |
-| 123 | number | 1.0.0 |
-| BigInt(9007199254740991) | bigint | 1.0.0 |
-| "hello" | string | 1.0.0 |
-| /s+/gi | regexp | 1.0.0 |
-| new Date() | date | 1.0.0 |
-| new Error("A mistake") | error | 1.0.0 |
-| {} | object | 1.0.0 |
-| new (class SomeCustomClass {}) | object | 1.0.0 |
-| () => {} | function | 1.0.0 |
-| function(){} | function | 1.0.0 |
-| class Simple {} | function | 1.0.0 |
-| [1,2,3] | array | 1.0.0 |
-| new Set() | set | 1.2.0 |
-| new WeakSet() | set | 1.3.1 |
-| new Map() | map | 1.2.0 |
-| new WeakMap() | map | 1.3.1 |
-| new Int8Array(8) |  typedarray | 1.3.0 |
-| new Uint8Array() | typedarray | 1.3.0 |
-| new Uint8ClampedArray() | typedarray | 1.3.0 |
-| new Int16Array() | typedarray | 1.3.0 |
-| new Uint16Array() | typedarray | 1.3.0 |
-| new Int32Array() | typedarray | 1.3.0 |
-| new Uint32Array() | typedarray | 1.3.0 |
-| new Float32Array() | typedarray | 1.3.0 |
-| new Float64Array() | typedarray | 1.3.0 |
-| new BigInt64Array() | typedarray | 1.3.0 |
-| new BigUint64Array() | typedarray | 1.3.0 |
-| Promise.resolve('any') | promise | 1.4.0 |
-| function* () {} | generatorfunction | 1.4.1 |
-| (function* () {})() | generator | 1.4.1 |
-| new ArrayBuffer(8) | arraybuffer | 1.5.0 |
-| new DataView(buffer) | dataview | 1.5.0 |
+- Detects 25+ JavaScript types including primitives, objects, collections, and typed arrays
+- Returns consistent lowercase string identifiers (e.g. `"array"`, `"map"`, `"promise"`)
+- Full TypeScript support with type definitions
+- Multiple output formats: CommonJS, ES Modules, UMD
+- Zero dependencies, tree-shakeable
+- Cross-browser and Node.js compatible
 
-## Install
+## Supported Types
 
-[![https://nodei.co/npm/@lopatnov/get-internal-type.png?downloads=true&downloadRank=true&stars=true](https://nodei.co/npm/@lopatnov/get-internal-type.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/@lopatnov/get-internal-type)
+| Object Value | Result | Since |
+|:---|:---|:---|
+| `undefined` | `"undefined"` | 1.0.0 |
+| `null` | `"null"` | 1.0.0 |
+| `false` | `"boolean"` | 1.0.0 |
+| `Symbol("123")` | `"symbol"` | 1.0.0 |
+| `123` | `"number"` | 1.0.0 |
+| `BigInt(9007199254740991)` | `"bigint"` | 1.0.0 |
+| `"hello"` | `"string"` | 1.0.0 |
+| `/s+/gi` | `"regexp"` | 1.0.0 |
+| `new Date()` | `"date"` | 1.0.0 |
+| `new Error("A mistake")` | `"error"` | 1.0.0 |
+| `{}` | `"object"` | 1.0.0 |
+| `new (class SomeCustomClass {})` | `"object"` | 1.0.0 |
+| `() => {}` | `"function"` | 1.0.0 |
+| `function(){}` | `"function"` | 1.0.0 |
+| `class Simple {}` | `"function"` | 1.0.0 |
+| `[1,2,3]` | `"array"` | 1.0.0 |
+| `new Set()` | `"set"` | 1.2.0 |
+| `new WeakSet()` | `"set"` | 1.3.1 |
+| `new Map()` | `"map"` | 1.2.0 |
+| `new WeakMap()` | `"map"` | 1.3.1 |
+| `new Int8Array(8)` | `"typedarray"` | 1.3.0 |
+| `new Uint8Array()` | `"typedarray"` | 1.3.0 |
+| `new Float64Array()` | `"typedarray"` | 1.3.0 |
+| `Promise.resolve('any')` | `"promise"` | 1.4.0 |
+| `function* () {}` | `"generatorfunction"` | 1.4.1 |
+| `(function* () {})()` | `"generator"` | 1.4.1 |
+| `new ArrayBuffer(8)` | `"arraybuffer"` | 1.5.0 |
+| `new DataView(buffer)` | `"dataview"` | 1.5.0 |
 
-```shell
+All typed arrays (`Int8Array`, `Uint8Array`, `Uint8ClampedArray`, `Int16Array`, `Uint16Array`, `Int32Array`, `Uint32Array`, `Float32Array`, `Float64Array`, `BigInt64Array`, `BigUint64Array`) return `"typedarray"`.
+
+## Installation
+
+```bash
 npm install @lopatnov/get-internal-type
 ```
 
-[Browser](//lopatnov.github.io/get-internal-type/dist/get-internal-type.js)
+### Browser
 
 ```html
-<script src="//lopatnov.github.io/get-internal-type/dist/polyfills/array.forEach.min.js"></script>
-<script src="//lopatnov.github.io/get-internal-type/dist/get-internal-type.min.js"></script>
+<script src="https://lopatnov.github.io/get-internal-type/dist/get-internal-type.umd.min.js"></script>
 ```
 
-Browser support: Cross-browser
+## Usage
 
-## Import package to the project
-
-### TypeScript
+### ES Modules
 
 ```typescript
-import getInternalType from 'get-internal-type';
+import getInternalType from "@lopatnov/get-internal-type";
+
+getInternalType(42);             // "number"
+getInternalType("hello");        // "string"
+getInternalType([1, 2, 3]);      // "array"
+getInternalType(new Map());      // "map"
+getInternalType(new Set());      // "set"
+getInternalType(Promise.resolve()); // "promise"
+getInternalType(null);           // "null"
+getInternalType(undefined);      // "undefined"
 ```
 
-### JavaScript
+### CommonJS
 
 ```javascript
-var getInternalType = require("get-internal-type");
+const getInternalType = require("@lopatnov/get-internal-type");
+
+getInternalType({});             // "object"
+getInternalType(new Date());     // "date"
+getInternalType(/regex/);        // "regexp"
+getInternalType(new Error());    // "error"
 ```
 
-## Gets object type
+### Browser (UMD)
 
-### getInternalType(obj: any) => string
+```html
+<script src="https://lopatnov.github.io/get-internal-type/dist/get-internal-type.umd.min.js"></script>
+<script>
+  console.log(getInternalType.default([1, 2, 3])); // "array"
+</script>
+```
+
+## API
+
+### `getInternalType(obj: any): string`
+
+Returns a lowercase string representing the internal [[Class]] of the given object.
+
+| Parameter | Type | Description |
+|:---|:---|:---|
+| `obj` | `any` | The value to determine the type of |
+
+**Returns:** `string` — a lowercase type identifier
+
+#### Examples
 
 ```typescript
-console.log(getInternalType(undefined)) // expected "undefined"
-console.log(getInternalType(null)) // expected "null"
-console.log(getInternalType(false)) // expected "boolean"
-console.log(getInternalType(Symbol("123"))) // expected "symbol"
-console.log(getInternalType(123)) // expected "number"
-console.log(getInternalType(BigInt(9007199254740991))) // expected "bigint"
-console.log(getInternalType("hello")) // expected "string"
-console.log(getInternalType(/s+/gi)) // expected "regexp"
-console.log(getInternalType(new Date())) // expected "date"
-console.log(getInternalType(new Error("A mistake"))) // expected "error"
-console.log(getInternalType({})) // expected "object"
-console.log(getInternalType(new (class SomeCustomClass {}))) // expected "object"
-console.log(getInternalType(() => {})) // expected "function"
-console.log(getInternalType(function(){})) // expected "function"
-console.log(getInternalType(class Simple {})) // expected "function"
-console.log(getInternalType([1,2,3])) // expected "array"
+// Primitives
+getInternalType(undefined);          // "undefined"
+getInternalType(null);               // "null"
+getInternalType(false);              // "boolean"
+getInternalType(Symbol("123"));      // "symbol"
+getInternalType(123);                // "number"
+getInternalType(BigInt(9007199254740991)); // "bigint"
+getInternalType("hello");            // "string"
 
-console.log(getInternalType(new Set())) // expected "set"
-console.log(getInternalType(new WeakSet())) // expected "set"
-console.log(getInternalType(new Map())) // expected "map"
-console.log(getInternalType(new WeakMap())) // expected "map"
+// Objects
+getInternalType({});                 // "object"
+getInternalType([1, 2, 3]);          // "array"
+getInternalType(/s+/gi);             // "regexp"
+getInternalType(new Date());         // "date"
+getInternalType(new Error("oops"));  // "error"
 
-console.log(getInternalType(new Int8Array(8))) // expected "typedarray"
-console.log(getInternalType(new Uint8Array())) // expected "typedarray"
-console.log(getInternalType(new Uint8ClampedArray())) // expected "typedarray"
-console.log(getInternalType(new Int16Array())) // expected "typedarray"
-console.log(getInternalType(new Uint16Array())) // expected "typedarray"
-console.log(getInternalType(new Int32Array())) // expected "typedarray"
-console.log(getInternalType(new Uint32Array())) // expected "typedarray"
-console.log(getInternalType(new Float32Array())) // expected "typedarray"
-console.log(getInternalType(new Float64Array())) // expected "typedarray"
-console.log(getInternalType(new BigInt64Array())) // expected "typedarray"
-console.log(getInternalType(new BigUint64Array())) // expected "typedarray"
+// Collections
+getInternalType(new Map());          // "map"
+getInternalType(new WeakMap());      // "map"
+getInternalType(new Set());          // "set"
+getInternalType(new WeakSet());      // "set"
 
-console.log(getInternalType(Promise.resolve('any'))) // expected "promise"
-console.log(getInternalType(function* () {})) // expected "generatorfunction" (ES6)
-console.log(getInternalType((function* () {})())) // expected "generator"
+// Functions
+getInternalType(() => {});           // "function"
+getInternalType(function* () {});    // "generatorfunction"
+getInternalType((function* () {})()); // "generator"
 
-console.log(getInternalType(new ArrayBuffer(16))) // expected "arraybuffer"
-console.log(getInternalType(new DataView(new ArrayBuffer(16)))) // expected "dataview"
-
+// Async & Structured Data
+getInternalType(Promise.resolve("any")); // "promise"
+getInternalType(new ArrayBuffer(16));    // "arraybuffer"
+getInternalType(new DataView(new ArrayBuffer(16))); // "dataview"
+getInternalType(new Int8Array(8));       // "typedarray"
 ```
 
 ## Demo
 
-See, how it's working: [https://runkit.com/lopatnov/get-internal-type-demo](https://runkit.com/lopatnov/get-internal-type-demo)
+See how it works: [https://runkit.com/lopatnov/get-internal-type-demo](https://runkit.com/lopatnov/get-internal-type-demo)
 
-Test it with a runkit: [https://npm.runkit.com/%40lopatnov%2Fget-internal-type](https://npm.runkit.com/%40lopatnov%2Fget-internal-type)
+Try it with RunKit: [https://npm.runkit.com/%40lopatnov%2Fget-internal-type](https://npm.runkit.com/%40lopatnov%2Fget-internal-type)
 
-## Rights and Agreements
+## Contributing
 
-License [Apache-2.0](https://github.com/lopatnov/get-internal-type/blob/master/LICENSE)
+Contributions are welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
-Copyright 2019-2021 Oleksandr Lopatnov
+## License
+
+[Apache-2.0](LICENSE)
+
+Copyright 2019-2026 Oleksandr Lopatnov
+
+---
+
+### Author
+
+**Oleksandr Lopatnov** — Full-stack developer
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=flat&logo=linkedin)](https://www.linkedin.com/in/lopatnov/)
+[![GitHub](https://img.shields.io/badge/GitHub-Follow-black?style=flat&logo=github)](https://github.com/lopatnov)
+
+If you find this project useful, please consider giving it a star on GitHub!
