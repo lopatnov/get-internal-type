@@ -1,50 +1,71 @@
-let types: any = {},
-  typesToString: any = types.toString,
-  buildInList = [
-    "Boolean",
-    "Number",
-    "String",
-    "Function",
-    "Array",
-    "Date",
-    "RegExp",
-    "Object",
-    "Error",
-    "Promise",
-    "Generator",
-    "GeneratorFunction",
-    "ArrayBuffer",
-    "DataView"
-  ],
-  typedArrays = [
-    "Int8Array",
-    "Uint8Array",
-    "Uint8ClampedArray",
-    "Int16Array",
-    "Uint16Array",
-    "Int32Array",
-    "Uint32Array",
-    "Float32Array",
-    "Float64Array",
-    "BigInt64Array",
-    "BigUint64Array"
-  ],
-  maps = ["Map", "WeakMap"],
-  sets = ["Set", "WeakSet"];
+const types: Record<string, string> = {};
+const typesToString = Object.prototype.toString;
 
-buildInList.forEach(function(name) {
+const builtInList = [
+  "Boolean",
+  "Number",
+  "String",
+  "Array",
+  "Date",
+  "RegExp",
+  "Object",
+  "Error",
+  "Promise",
+  "DataView",
+  "WeakRef",
+  "FinalizationRegistry"
+];
+
+const functions = ["Function", "AsyncFunction"];
+const generators = ["Generator", "AsyncGenerator"];
+const generatorFunctions = ["GeneratorFunction", "AsyncGeneratorFunction"];
+const arrayBuffers = ["ArrayBuffer", "SharedArrayBuffer"];
+const maps = ["Map", "WeakMap"];
+const sets = ["Set", "WeakSet"];
+
+const typedArrays = [
+  "Int8Array",
+  "Uint8Array",
+  "Uint8ClampedArray",
+  "Int16Array",
+  "Uint16Array",
+  "Int32Array",
+  "Uint32Array",
+  "Float32Array",
+  "Float64Array",
+  "BigInt64Array",
+  "BigUint64Array"
+];
+
+builtInList.forEach(function (name) {
   types["[object " + name + "]"] = name.toLowerCase();
 });
 
-maps.forEach(function(name) {
+functions.forEach(function (name) {
+  types["[object " + name + "]"] = "function";
+});
+
+generators.forEach(function (name) {
+  types["[object " + name + "]"] = "generator";
+});
+
+generatorFunctions.forEach(function (name) {
+  types["[object " + name + "]"] = "generatorfunction";
+});
+
+arrayBuffers.forEach(function (name) {
+  types["[object " + name + "]"] = "arraybuffer";
+});
+
+maps.forEach(function (name) {
   types["[object " + name + "]"] = "map";
 });
 
-sets.forEach(function(name) {
+sets.forEach(function (name) {
   types["[object " + name + "]"] = "set";
 });
 
-typedArrays.forEach(function(name) {
+typedArrays.forEach(function (name) {
   types["[object " + name + "]"] = "typedarray";
 });
 
@@ -52,6 +73,8 @@ export default function getInternalType(obj: any): string {
   return obj == null
     ? obj + ""
     : typeof obj === "object" || typeof obj === "function"
-    ? types[typesToString.call(obj)] || "object"
-    : typeof obj;
+      ? types[typesToString.call(obj)] || "object"
+      : typeof obj;
 }
+
+export { getInternalType };

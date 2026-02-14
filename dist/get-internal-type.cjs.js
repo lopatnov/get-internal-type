@@ -1,3 +1,7 @@
+'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
 const types = {};
 const typesToString = Object.prototype.toString;
 const builtInList = [
@@ -65,5 +69,9 @@ function getInternalType(obj) {
             : typeof obj;
 }
 
-export { getInternalType as default, getInternalType };
-//# sourceMappingURL=get-internal-type.es.js.map
+exports.default = getInternalType;
+exports.getInternalType = getInternalType;
+
+module.exports = exports.default;
+Object.assign(module.exports, exports);
+//# sourceMappingURL=get-internal-type.cjs.js.map
