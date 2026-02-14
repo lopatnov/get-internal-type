@@ -40,13 +40,6 @@ export default [
         file: pkg.module,
         format: "es",
         sourcemap: true
-      },
-      {
-        file: pkg.browser,
-        format: "umd",
-        name: pkg.umdName,
-        sourcemap: true,
-        exports: "named"
       }
     ],
 
@@ -54,14 +47,30 @@ export default [
     plugins
   },
   {
-    input: pkg.browser,
-    context: "this",
+    input: "src/umd-entry.ts",
+
+    output: {
+      file: pkg.browser,
+      format: "umd",
+      name: pkg.umdName,
+      sourcemap: true,
+      exports: "default"
+    },
+
+    external,
+    plugins
+  },
+  {
+    input: "src/umd-entry.ts",
+
     output: {
       file: "dist/get-internal-type.umd.min.js",
       format: "umd",
       name: pkg.umdName,
-      exports: "named"
+      exports: "default"
     },
-    plugins: [uglify()]
+
+    external,
+    plugins: [...plugins, uglify()]
   }
 ];

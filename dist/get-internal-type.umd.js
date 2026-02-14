@@ -1,28 +1,32 @@
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
-    typeof define === 'function' && define.amd ? define(['exports'], factory) :
-    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.getInternalType = {}));
-})(this, (function (exports) { 'use strict';
+    typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
+    typeof define === 'function' && define.amd ? define(factory) :
+    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.getInternalType = factory());
+})(this, (function () { 'use strict';
 
-    var types = {};
-    var typesToString = Object.prototype.toString;
-    var builtInList = [
+    const types = {};
+    const typesToString = Object.prototype.toString;
+    const builtInList = [
         "Boolean",
         "Number",
         "String",
-        "Function",
         "Array",
         "Date",
         "RegExp",
         "Object",
         "Error",
         "Promise",
-        "Generator",
-        "GeneratorFunction",
-        "ArrayBuffer",
-        "DataView"
+        "DataView",
+        "WeakRef",
+        "FinalizationRegistry"
     ];
-    var typedArrays = [
+    const functions = ["Function", "AsyncFunction"];
+    const generators = ["Generator", "AsyncGenerator"];
+    const generatorFunctions = ["GeneratorFunction", "AsyncGeneratorFunction"];
+    const arrayBuffers = ["ArrayBuffer", "SharedArrayBuffer"];
+    const maps = ["Map", "WeakMap"];
+    const sets = ["Set", "WeakSet"];
+    const typedArrays = [
         "Int8Array",
         "Uint8Array",
         "Uint8ClampedArray",
@@ -35,10 +39,20 @@
         "BigInt64Array",
         "BigUint64Array"
     ];
-    var maps = ["Map", "WeakMap"];
-    var sets = ["Set", "WeakSet"];
     builtInList.forEach(function (name) {
         types["[object " + name + "]"] = name.toLowerCase();
+    });
+    functions.forEach(function (name) {
+        types["[object " + name + "]"] = "function";
+    });
+    generators.forEach(function (name) {
+        types["[object " + name + "]"] = "generator";
+    });
+    generatorFunctions.forEach(function (name) {
+        types["[object " + name + "]"] = "generatorfunction";
+    });
+    arrayBuffers.forEach(function (name) {
+        types["[object " + name + "]"] = "arraybuffer";
     });
     maps.forEach(function (name) {
         types["[object " + name + "]"] = "map";
@@ -57,9 +71,7 @@
                 : typeof obj;
     }
 
-    exports.default = getInternalType;
-
-    Object.defineProperty(exports, '__esModule', { value: true });
+    return getInternalType;
 
 }));
 //# sourceMappingURL=get-internal-type.umd.js.map

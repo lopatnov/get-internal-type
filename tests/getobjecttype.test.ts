@@ -131,6 +131,12 @@ describe("Tests for functions", () => {
 
     expect(actual).toBe(expected);
   });
+  it("should get type of an async function", () => {
+    const actual = getInternalType(async function () {});
+    const expected = "function";
+
+    expect(actual).toBe(expected);
+  });
 });
 
 describe("Tests for objects", () => {
@@ -246,6 +252,20 @@ describe("Tests for arrays", () => {
     expect(actual1).toBe(expected);
     expect(actual2).toBe(expected);
   });
+  it("should get type of all typed array variants", () => {
+    const expected = "typedarray";
+
+    expect(getInternalType(new Uint8Array(4))).toBe(expected);
+    expect(getInternalType(new Uint8ClampedArray(4))).toBe(expected);
+    expect(getInternalType(new Int16Array(4))).toBe(expected);
+    expect(getInternalType(new Uint16Array(4))).toBe(expected);
+    expect(getInternalType(new Int32Array(4))).toBe(expected);
+    expect(getInternalType(new Uint32Array(4))).toBe(expected);
+    expect(getInternalType(new Float32Array(4))).toBe(expected);
+    expect(getInternalType(new Float64Array(4))).toBe(expected);
+    expect(getInternalType(new BigInt64Array(4))).toBe(expected);
+    expect(getInternalType(new BigUint64Array(4))).toBe(expected);
+  });
 });
 
 describe("Tests for RegExp", () => {
@@ -265,6 +285,16 @@ describe("Tests for errors", () => {
     const expected = "error";
 
     expect(actual).toBe(expected);
+  });
+  it("should get type of error subclasses", () => {
+    const expected = "error";
+
+    expect(getInternalType(new TypeError("type"))).toBe(expected);
+    expect(getInternalType(new RangeError("range"))).toBe(expected);
+    expect(getInternalType(new SyntaxError("syntax"))).toBe(expected);
+    expect(getInternalType(new ReferenceError("ref"))).toBe(expected);
+    expect(getInternalType(new URIError("uri"))).toBe(expected);
+    expect(getInternalType(new EvalError("eval"))).toBe(expected);
   });
 });
 
@@ -321,6 +351,50 @@ describe("Tests for structured data", () => {
     const view = new DataView(buffer);
     const actual = getInternalType(view);
     const expected = "dataview";
+
+    expect(actual).toBe(expected);
+  });
+});
+
+describe("Tests for async generators", () => {
+  it("should get type of an AsyncGeneratorFunction", () => {
+    async function* asyncIdMaker() {
+      let index = 0;
+      while (true) yield index++;
+    }
+
+    const actual = getInternalType(asyncIdMaker);
+    const expected = "generatorfunction";
+
+    expect(actual).toBe(expected);
+  });
+
+  it("should get type of an AsyncGenerator", () => {
+    async function* asyncIdMaker() {
+      let index = 0;
+      while (true) yield index++;
+    }
+
+    const gen = asyncIdMaker();
+    const actual = getInternalType(gen);
+    const expected = "generator";
+
+    expect(actual).toBe(expected);
+  });
+});
+
+describe("Tests for weak references", () => {
+  it("should get type of a WeakRef", () => {
+    const obj = {};
+    const actual = getInternalType(new WeakRef(obj));
+    const expected = "weakref";
+
+    expect(actual).toBe(expected);
+  });
+
+  it("should get type of a FinalizationRegistry", () => {
+    const actual = getInternalType(new FinalizationRegistry(() => {}));
+    const expected = "finalizationregistry";
 
     expect(actual).toBe(expected);
   });

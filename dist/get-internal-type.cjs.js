@@ -2,25 +2,29 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var types = {};
-var typesToString = Object.prototype.toString;
-var builtInList = [
+const types = {};
+const typesToString = Object.prototype.toString;
+const builtInList = [
     "Boolean",
     "Number",
     "String",
-    "Function",
     "Array",
     "Date",
     "RegExp",
     "Object",
     "Error",
     "Promise",
-    "Generator",
-    "GeneratorFunction",
-    "ArrayBuffer",
-    "DataView"
+    "DataView",
+    "WeakRef",
+    "FinalizationRegistry"
 ];
-var typedArrays = [
+const functions = ["Function", "AsyncFunction"];
+const generators = ["Generator", "AsyncGenerator"];
+const generatorFunctions = ["GeneratorFunction", "AsyncGeneratorFunction"];
+const arrayBuffers = ["ArrayBuffer", "SharedArrayBuffer"];
+const maps = ["Map", "WeakMap"];
+const sets = ["Set", "WeakSet"];
+const typedArrays = [
     "Int8Array",
     "Uint8Array",
     "Uint8ClampedArray",
@@ -33,10 +37,20 @@ var typedArrays = [
     "BigInt64Array",
     "BigUint64Array"
 ];
-var maps = ["Map", "WeakMap"];
-var sets = ["Set", "WeakSet"];
 builtInList.forEach(function (name) {
     types["[object " + name + "]"] = name.toLowerCase();
+});
+functions.forEach(function (name) {
+    types["[object " + name + "]"] = "function";
+});
+generators.forEach(function (name) {
+    types["[object " + name + "]"] = "generator";
+});
+generatorFunctions.forEach(function (name) {
+    types["[object " + name + "]"] = "generatorfunction";
+});
+arrayBuffers.forEach(function (name) {
+    types["[object " + name + "]"] = "arraybuffer";
 });
 maps.forEach(function (name) {
     types["[object " + name + "]"] = "map";
@@ -56,6 +70,7 @@ function getInternalType(obj) {
 }
 
 exports.default = getInternalType;
+exports.getInternalType = getInternalType;
 
 module.exports = exports.default;
 Object.assign(module.exports, exports);

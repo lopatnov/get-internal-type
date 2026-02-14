@@ -2,6 +2,9 @@
 
 ## 2.0.0
 
+- Added `AsyncFunction`, `AsyncGeneratorFunction`, `AsyncGenerator`, `SharedArrayBuffer`, `WeakRef`, `FinalizationRegistry` type detection
+- Related types are now grouped: `Function`/`AsyncFunction` → `"function"`, `Generator`/`AsyncGenerator` → `"generator"`, `GeneratorFunction`/`AsyncGeneratorFunction` → `"generatorfunction"`, `ArrayBuffer`/`SharedArrayBuffer` → `"arraybuffer"`
+- Added named export (`import { getInternalType } from "..."`)
 - Migrated to Rollup 4, TypeScript 5.9, Jest 30
 - Added ESM (`import`) and CJS (`require`) dual-package support via `exports` field
 - Added UMD build for browsers

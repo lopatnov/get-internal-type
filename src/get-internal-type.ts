@@ -5,18 +5,23 @@ const builtInList = [
   "Boolean",
   "Number",
   "String",
-  "Function",
   "Array",
   "Date",
   "RegExp",
   "Object",
   "Error",
   "Promise",
-  "Generator",
-  "GeneratorFunction",
-  "ArrayBuffer",
-  "DataView"
+  "DataView",
+  "WeakRef",
+  "FinalizationRegistry"
 ];
+
+const functions = ["Function", "AsyncFunction"];
+const generators = ["Generator", "AsyncGenerator"];
+const generatorFunctions = ["GeneratorFunction", "AsyncGeneratorFunction"];
+const arrayBuffers = ["ArrayBuffer", "SharedArrayBuffer"];
+const maps = ["Map", "WeakMap"];
+const sets = ["Set", "WeakSet"];
 
 const typedArrays = [
   "Int8Array",
@@ -32,11 +37,24 @@ const typedArrays = [
   "BigUint64Array"
 ];
 
-const maps = ["Map", "WeakMap"];
-const sets = ["Set", "WeakSet"];
-
 builtInList.forEach(function (name) {
   types["[object " + name + "]"] = name.toLowerCase();
+});
+
+functions.forEach(function (name) {
+  types["[object " + name + "]"] = "function";
+});
+
+generators.forEach(function (name) {
+  types["[object " + name + "]"] = "generator";
+});
+
+generatorFunctions.forEach(function (name) {
+  types["[object " + name + "]"] = "generatorfunction";
+});
+
+arrayBuffers.forEach(function (name) {
+  types["[object " + name + "]"] = "arraybuffer";
 });
 
 maps.forEach(function (name) {
@@ -58,3 +76,5 @@ export default function getInternalType(obj: any): string {
       ? types[typesToString.call(obj)] || "object"
       : typeof obj;
 }
+
+export { getInternalType };
