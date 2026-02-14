@@ -1,6 +1,6 @@
 {
   "name": "@lopatnov/get-internal-type",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "Determine the internal JavaScript [[Class]] of an object. A lightweight, cross-platform TypeScript library for reliable runtime type detection.",
   "author": {
     "name": "lopatnov",
@@ -65,7 +65,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.39.2",
-    "@lopatnov/rollup-plugin-uglify": "^3.2.0",
+    "@lopatnov/rollup-plugin-uglify": "^4.0.0",
     "@rollup/plugin-commonjs": "^29.0.0",
     "@rollup/plugin-json": "^6.1.0",
     "@rollup/plugin-node-resolve": "^16.0.3",
