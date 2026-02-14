@@ -66,4 +66,4 @@ function getInternalType(obj) {
 }
 
 export { getInternalType as default, getInternalType };
-//# sourceMappingURL=get-internal-type.es.js.map
+//# sourceMappingURL=get-internal-type.esm.mjs.map
