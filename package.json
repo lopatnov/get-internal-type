@@ -1,6 +1,6 @@
 {
   "name": "@lopatnov/get-internal-type",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Determine the internal JavaScript [[Class]] of an object. A lightweight, cross-platform TypeScript library for reliable runtime type detection.",
   "author": {
     "name": "lopatnov",
@@ -9,17 +9,17 @@
   "license": "Apache-2.0",
   "homepage": "https://lopatnov.github.io/get-internal-type/",
   "source": "src/get-internal-type.ts",
-  "main": "dist/get-internal-type.cjs.js",
-  "module": "dist/get-internal-type.es.js",
+  "main": "dist/get-internal-type.cjs",
+  "module": "dist/get-internal-type.esm.mjs",
   "browser": "dist/get-internal-type.umd.js",
   "types": "dist/get-internal-type.d.ts",
   "exports": {
     ".": {
       "types": "./dist/get-internal-type.d.ts",
-      "import": "./dist/get-internal-type.es.js",
-      "require": "./dist/get-internal-type.cjs.js",
+      "import": "./dist/get-internal-type.esm.mjs",
+      "require": "./dist/get-internal-type.cjs",
       "browser": "./dist/get-internal-type.umd.js",
-      "default": "./dist/get-internal-type.umd.js"
+      "default": "./dist/get-internal-type.cjs"
     },
     "./package.json": "./package.json"
   },

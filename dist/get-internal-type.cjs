@@ -74,4 +74,4 @@ exports.getInternalType = getInternalType;
 
 module.exports = exports.default;
 Object.assign(module.exports, exports);
-//# sourceMappingURL=get-internal-type.cjs.js.map
+//# sourceMappingURL=get-internal-type.cjs.map
