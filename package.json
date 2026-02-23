@@ -1,6 +1,6 @@
 {
   "name": "@lopatnov/get-internal-type",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "description": "Determine the internal JavaScript [[Class]] of an object. A lightweight, cross-platform TypeScript library for reliable runtime type detection.",
   "author": {
     "name": "lopatnov",
@@ -52,9 +52,7 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "format": "prettier --write \"src/**/*.ts\" \"tests/**/*.{ts,js}\"",
-    "format:check": "prettier --check \"src/**/*.ts\" \"tests/**/*.{ts,js}\"",
-    "configure-npm": "node ./set-registry.js -s https://registry.npmjs.org",
-    "configure-gpr": "node ./set-registry.js -s https://npm.pkg.github.com"
+    "format:check": "prettier --check \"src/**/*.ts\" \"tests/**/*.{ts,js}\""
   },
   "repository": {
     "type": "git",
@@ -64,14 +62,14 @@
     "url": "https://github.com/lopatnov/get-internal-type/issues"
   },
   "devDependencies": {
-    "@eslint/js": "^9.39.2",
-    "@lopatnov/rollup-plugin-uglify": "^4.0.0",
+    "@eslint/js": "^10.0.1",
+    "@lopatnov/rollup-plugin-uglify": "^4.1.3",
     "@rollup/plugin-commonjs": "^29.0.0",
     "@rollup/plugin-json": "^6.1.0",
     "@rollup/plugin-node-resolve": "^16.0.3",
     "@rollup/plugin-typescript": "^12.3.0",
     "@types/jest": "^30.0.0",
-    "eslint": "^9.39.2",
+    "eslint": "^10.0.1",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.5",
     "jest": "^30.0.0",
