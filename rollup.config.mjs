@@ -71,6 +71,11 @@ export default [
     },
 
     external,
-    plugins: [...plugins, uglify()]
+    plugins: [
+      ...plugins,
+      uglify({
+        hook: "renderChunk"
+      })
+    ]
   }
 ];
