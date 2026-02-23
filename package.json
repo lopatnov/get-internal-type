@@ -1,6 +1,6 @@
 {
   "name": "@lopatnov/get-internal-type",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "description": "Determine the internal JavaScript [[Class]] of an object. A lightweight, cross-platform TypeScript library for reliable runtime type detection.",
   "author": {
     "name": "lopatnov",
@@ -52,8 +52,7 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "format": "prettier --write \"src/**/*.ts\" \"tests/**/*.{ts,js}\"",
-    "format:check": "prettier --check \"src/**/*.ts\" \"tests/**/*.{ts,js}\"",
-
+    "format:check": "prettier --check \"src/**/*.ts\" \"tests/**/*.{ts,js}\""
   },
   "repository": {
     "type": "git",
